@@ -13,6 +13,7 @@ export default function Accordion() {
 
     if (accordionItems) {
       accordionItems.forEach((item, index) => {
+        let itemBody = item.querySelector(".accordion-item__body")
         tl.to(item, {
           duration: 0.5,
           ease: "Power4.easeOut",
@@ -21,10 +22,19 @@ export default function Accordion() {
             trigger: item,
             start: 'top center',
             end: 'bottom center',
+            // pin: true,
             markers: true, // for debugging, you can remove this in production
             toggleActions: 'play none none none',
+            onEnter() {
+              tl.to(itemBody, {
+                duration: 0.5,
+                // height: "100%",
+                display: "block"
+              });
+            },
           },
-        });
+        })
+
       });
     }
   }, []);
@@ -37,9 +47,13 @@ export default function Accordion() {
       <div className="accordion" ref={accordionRef}>
         {extractedData.data.accordionCollection.items.map((item, index) => (
           <div className="accordion-item" key={index}>
-            <h2>{item.title}</h2>
-            <h4>{item.description}</h4>
-            <p>{item.body}</p>
+            <div className="accordion-item__title">
+              <h2>{item.title}</h2>
+            </div>
+            <div className="accordion-item__body">
+              <h4>{item.description}</h4>
+              <p>{item.body}</p>
+            </div>
           </div>
         ))}
       </div>

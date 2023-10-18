@@ -143,12 +143,20 @@ body {
 }
 
 .accordion-item {
-  min-height: 200px;
+  min-height: 100px;
   background: red;
   display: block;
   margin: 0 0 10px 0;
   padding: 30px;
   /* transition: all 1s ease-out; */
+}
+
+.accordion-item__title {
+  display: block;
+}
+
+.accordion-item__body {
+  display: none;
 }
 
 .plane {
