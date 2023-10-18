@@ -129,11 +129,31 @@ body {
 }
 
 .spacing {
-  height: 50vh;
+  height: 100vh;
 }
 
 @media screen and (max-width: 500px) {
   .reveal {
     padding-left: 10px;
   }
+}
+
+.accordion {
+  color: #000
+}
+
+.accordion-item {
+  min-height: 200px;
+  background: red;
+  display: block;
+  margin: 0 0 10px 0;
+  padding: 30px;
+  /* transition: all 1s ease-out; */
+}
+
+.plane {
+  background: #139b79;
+  display: block;
+  width: 40px;
+  height: 40px;
 }

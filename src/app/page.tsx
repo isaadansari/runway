@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import Accordion from './components/Accordion';
 import TextReveal from './components/TextReveal';
 import styles from './page.module.css';
 
 export default function Home() {
   return (
     <>
+      <div><Accordion /></div>
       <div><TextReveal /></div>
       <main className={styles.main}>
 

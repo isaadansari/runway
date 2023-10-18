@@ -42,7 +42,7 @@ function TextReveal() {
           ))}
         </div>
       </div>
-      <div className="spacing"></div>
+      <div className="spacing-small"></div>
     </>
   );
 }
