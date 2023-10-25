@@ -14,7 +14,7 @@
       font-size: max(2vw, 24px);
       line-height: 1.1;
       color: white;
-      margin-bottom: 20px;
+
 
     }
 
@@ -36,7 +36,6 @@
       width: max(50vw, 280px);
       padding: 15px;
       position: relative;
-
     }
 
     .accordion-item:nth-child(2) {
@@ -69,6 +68,11 @@
       .accordion-title {
         font-size: 20px;
       }
+    }
+
+    .accordion-content {
+      height: 0;
+      margin-top: 20px;
     }
 
     .object-span {
@@ -210,25 +214,30 @@ Register plugins
 
 
     tl.to('.accordion-item', {
-      height: 500,
+      height: 300,
       stagger: 1,
-      height: 25,
       autoAlpha: 1
     }, '<')
-    tl.to('.object-span', {
-      x: 500,
-      stagger: 1,
-    }, '<')
     tl.to('.accordion-content', {
-      height: 500,
+      height: 300,
       stagger: 1,
-      height: 25
+      onanimationend: ""
     }, '<')
+    tl.to('.object-span', {
+      x: 300,
+      stagger: 1,
+    }, '<')
+
+
     tl.to('.accordion-item .accordion-text', {
       stagger: 1,
       scale: .75,
       autoAlpha: 0
-    }, '<')
+    }, 1)
+    tl.to('.accordion-content', {
+      height: 30,
+      stagger: 1,
+    }, 1)
 
 
 
