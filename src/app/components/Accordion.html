@@ -8,6 +8,7 @@
       font-family: sans-serif;
       background: linear-gradient(120deg, #5c2fa6 13.57%, #5a36c0 98.38%);
       scroll-behavior: none;
+
     }
 
     .accordion-title {
@@ -29,6 +30,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 100%;
+
     }
 
     .accordion-item {
@@ -73,7 +76,7 @@
     .accordion-content {
       height: 0;
       opacity: 0;
-      padding: 20px 0
+      margin: 0
     }
 
     .object-span {
@@ -85,7 +88,7 @@
 
     .accordion-object {
       position: relative;
-
+      width: 300px;
     }
 
     .accordion-object:before {
@@ -113,10 +116,10 @@
             All-screen design.
           </div>
           <div class="accordion-content">
-            <div class="heading"></div>
             <div class="accordion-text">
               <div class="accordion-heading">
-                A joyful modeling experiencethat prepares you for scale.</div>
+                A joyful modeling experiencethat prepares you for scale.
+              </div>
               <div class="accordion-object">
                 <span class="object-span"></span>
               </div>
@@ -131,23 +134,14 @@
           <div class="accordion-content">
             <div class="accordion-text">
               <div class="accordion-heading">
-                A joyful modeling experiencethat prepares you for scale.</div> The breakthrough M1 chip is now in Air.
-              An
-              8-core CPU
-              delivers up to
-              60 percent
+                A joyful modeling experiencethat prepares you for scale.
+              </div>
               <div class="accordion-object">
                 <span class="object-span"></span>
-              </div> The breakthrough M1 chip is now in Air. An 8-core CPU delivers up to 60 percent
-              faster
-              performance than
-
-              the
-              previous generation, making Air a creative and mobile gaming powerhouse. Multitask smoothly between
-              powerful
-              apps and play graphics-intensive games. And with M1, you can go even further with your creativity with
-              apps
-              like SketchUp.
+              </div>
+              Lets you immerse yourself in whatever you’re reading,lf in whatever you’re reading,lf in whatever you’re
+              reading, watching, or creating. The 10.9-inch Liquid Retina
+              display features advanced technologies like True Tone, P3 wide color, and an antireflective coating.1
             </div>
           </div>
         </div>
@@ -157,15 +151,15 @@
           <div class="accordion-content">
             <div class="accordion-text">
               <div class="accordion-heading">
-                A joyful modeling experiencethat prepares you for scale.</div>
+                A joyful modeling experiencethat prepares you for scale.
+              </div>
               <div class="accordion-object">
                 <span class="object-span"></span>
               </div>
-              The 12MP Ultra Wide front camera enables Center Stage, making video calls more natural and content
-              creation
-              more fun. As you move around, the camera automatically pans to keep you centered in the shot. When others
-              join
-              or leave the frame, the view expands or zooms in.
+              Lets you immerse yourself in whatever you’re reading, watching, or creating. The 10.9-inch Liquid Retina
+              display features advanced technologies likmmerse yourself in whatever you’re reading, watching, or
+              creating. The 10.9-inch Liquid Retina
+              display features advanced technologies like True Tone, P3 wide color, and an antireflective coating.1
             </div>
           </div>
         </div>
@@ -175,15 +169,14 @@
           <div class="accordion-content">
             <div class="accordion-text">
               <div class="accordion-heading">
-                A joyful modeling experiencethat prepares you for scale.</div>Join superfast 5G wireless networks when
-              you’re on the
-              go. Download
-              files, play
+                A joyful modeling experiencethat prepares you for scale.
+              </div>
               <div class="accordion-object">
                 <span class="object-span"></span>
-              </div>Join superfast 5G wireless networks when you’re on the go. Download files, play
-              multiplayer
-              games, stream movies, check in with friends, and more.
+              </div>
+              Lets you immerse yourself in whatever you’re reading, watching, or creating. The 10.9-inch Liquid Retina
+              Lets you immerse yourself in whatever you’re reading, watching, or creating. The 10.9-inch Liquid Retina
+              display features advanced technologies like True Tone, P3 wide color, and an antireflective coating.1
             </div>
           </div>
         </div>
@@ -231,15 +224,13 @@ Register plugins
 
 
     tl.to('.accordion-item', {
-      height: 300,
       stagger: 1,
       autoAlpha: 1
     }, '<')
     tl.to('.accordion-content', {
       height: 300,
       stagger: 1,
-
-      autoAlpha: 1
+      autoAlpha: 1, marginTop: 20
     }, '<')
     tl.to('.object-span', {
       x: 300,
@@ -253,7 +244,7 @@ Register plugins
       autoAlpha: 0
     }, 1)
     tl.to('.accordion-content', {
-      height: 30,
+      height: 0,
       stagger: 1,
 
     }, 1)
