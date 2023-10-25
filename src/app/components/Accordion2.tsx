@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import extractedData from "./data.json";
 
 
-const Accordion = () => {
+const Accordion2 = () => {
   const accordionRef = useRef<HTMLDivElement>(null);
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
@@ -64,16 +64,16 @@ const Accordion = () => {
 
   }, []);
   const toggleAccordion = (index: number) => {
-    // const accordionTexts = document.querySelectorAll(".accordion__text");
+    const accordionTexts = document.querySelectorAll(".accordion__text");
 
-    // if (openAccordion === index && index !== 0) {
-    //   setOpenAccordion(null);
-    //   accordionTexts[index].classList.remove("open")
+    if (openAccordion === index && index !== 0) {
+      setOpenAccordion(null);
+      accordionTexts[index].classList.remove("open")
 
-    // } else {
-    //   setOpenAccordion(index);
-    //   accordionTexts[index].classList.add("open")
-    // }
+    } else {
+      setOpenAccordion(index);
+      accordionTexts[index].classList.add("open")
+    }
   };
 
 
@@ -116,4 +116,4 @@ const Accordion = () => {
   );
 };
 
-export default Accordion;
+export default Accordion2;

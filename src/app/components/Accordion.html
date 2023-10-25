@@ -1,107 +1,7 @@
 <html>
 
 <head>
-  <style>
-    body {
-      margin: 0;
-      background: #fff;
-      font-family: sans-serif;
-      background: linear-gradient(120deg, #5c2fa6 13.57%, #5a36c0 98.38%);
-      scroll-behavior: none;
-
-    }
-
-    .accordion-title {
-      font-size: 18px;
-      line-height: 1;
-      color: white;
-
-
-    }
-
-    .accordion-text {
-      font-size: max(1vw, 15px);
-      line-height: 1.4;
-      overflow: hidden;
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .accordions {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 100%;
-
-    }
-
-    .accordion-item {
-      background: linear-gradient(200deg, #1d91fc 13.57%, #5a36c0 98.38%);
-      width: max(50vw, 280px);
-      padding: 15px;
-      position: relative;
-    }
-
-    .accordion-item:nth-child(2) {
-      background: linear-gradient(200deg, #f28885 13.57%, #e94f66 98.38%);
-    }
-
-    .accordion-item:nth-child(3) {
-      background: linear-gradient(200deg, #65bb76 13.57%, #466fab 98.38%);
-    }
-
-    .accordion-item:nth-child(4) {
-      background: linear-gradient(200deg, #c215d1 13.57%, #9813a1 98.38%);
-    }
-
-    .spacer {
-      height: 70vh;
-    }
-
-    .accordion-heading {
-      font-size: 40px;
-      margin: 0 0 20px;
-      line-height: 1;
-    }
-
-    @media (max-width: 480px) {
-      .accordion-item {
-        padding: 15px 20px 8px;
-      }
-
-      .accordion-title {
-        font-size: 20px;
-      }
-    }
-
-    .accordion-content {
-      height: 0;
-      opacity: 0;
-      margin: 0
-    }
-
-    .object-span {
-      background: #5a36c0;
-      display: block;
-      height: 30px;
-      width: 30px;
-    }
-
-    .accordion-object {
-      position: relative;
-      width: 300px;
-    }
-
-    .accordion-object:before {
-      position: absolute;
-      display: block;
-      content: "";
-      height: 2px;
-      width: 100%;
-      background: #fff;
-      top: 14px;
-
-    }
-  </style>
+  <link rel="stylesheet" href="../styles/accordion.css " />
 </head>
 
 <body>
@@ -203,13 +103,7 @@ Register plugins
     /*------------------------------
     Init ScrollSmoother
     ------------------------------*/
-    const scrollerSmoother = ScrollSmoother.create({
-      content: '#content',
-      wrapper: '#wrapper',
-      smooth: true,
-      effects: false,
-      normalizeScroll: false
-    })
+
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -246,7 +140,7 @@ Register plugins
     tl.to('.accordion-content', {
       height: 0,
       stagger: 1,
-
+      marginTop: 0
     }, 1)
 
 
