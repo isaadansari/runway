@@ -11,8 +11,8 @@
     }
 
     .accordion-title {
-      font-size: max(2vw, 24px);
-      line-height: 1.1;
+      font-size: 18px;
+      line-height: 1;
       color: white;
 
 
@@ -72,14 +72,31 @@
 
     .accordion-content {
       height: 0;
-      margin-top: 20px;
+      opacity: 0;
+      padding: 20px 0
     }
 
     .object-span {
       background: #5a36c0;
       display: block;
-      height: 20px;
-      width: 20px;
+      height: 30px;
+      width: 30px;
+    }
+
+    .accordion-object {
+      position: relative;
+
+    }
+
+    .accordion-object:before {
+      position: absolute;
+      display: block;
+      content: "";
+      height: 2px;
+      width: 100%;
+      background: #fff;
+      top: 14px;
+
     }
   </style>
 </head>
@@ -221,7 +238,8 @@ Register plugins
     tl.to('.accordion-content', {
       height: 300,
       stagger: 1,
-      onanimationend: ""
+
+      autoAlpha: 1
     }, '<')
     tl.to('.object-span', {
       x: 300,
@@ -237,6 +255,7 @@ Register plugins
     tl.to('.accordion-content', {
       height: 30,
       stagger: 1,
+
     }, 1)
 
 
