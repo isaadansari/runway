@@ -1,18 +1,7 @@
 /*------------------------------
-Register plugins
+Register ScrollTrigger plugin
 ------------------------------*/
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-/*------------------------------
-Init ScrollSmoother
-------------------------------*/
-const scrollerSmoother = ScrollSmoother.create({
-  content: "#content",
-  wrapper: "#wrapper",
-  smooth: true,
-  effects: false,
-  normalizeScroll: false,
-});
+gsap.registerPlugin(ScrollTrigger);
 
 const tl = gsap.timeline({
   scrollTrigger: {
