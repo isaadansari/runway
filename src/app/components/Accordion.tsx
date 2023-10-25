@@ -1,8 +1,7 @@
 "use client"
-import { gsap } from "gsap/dist/gsap";
-// import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
+import gsap from "gsap";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { useEffect, useRef, useState } from "react";
 
@@ -14,66 +13,60 @@ const Accordion = () => {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger)
-    // gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-    // const scrollerSmoother = ScrollSmoother.create({
-    //   content: '#content',
-    //   wrapper: '#wrapper',
-    //   smooth: true,
-    //   effects: false,
-    //   normalizeScroll: false
-    // })
-
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+    const scrollerSmoother = ScrollSmoother.create({
+      content: "#content",
+      wrapper: "#wrapper",
+      smooth: true,
+      effects: false,
+      normalizeScroll: false,
+    });
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.accordions',
         pin: true,
         start: 'top top',
-        end: '+=5000',
-        scrub: 1,
+        end: 'top bottom',
+        scrub: 20,
+        onToggle: (self) => console.log("toggled. active?", self.isActive),
       }
     })
 
 
     tl.to('.accordion-item', {
       stagger: 1,
-      autoAlpha: 1
+      autoAlpha: 1,
+      duration: 1
     }, '<')
     tl.to('.accordion-content', {
-      height: 300,
+      height: 330,
       stagger: 1,
-      autoAlpha: 1, marginTop: 20
+      autoAlpha: 1, marginTop: 20,
+      duration: 1
     }, '<')
     tl.to('.object-span', {
       x: 300,
-      stagger: 1,
+      stagger: 1, duration: 1
     }, '<')
 
 
     tl.to('.accordion-item .accordion-text', {
       stagger: 1,
       scale: .75,
-      autoAlpha: 0
+      autoAlpha: 0,
+      duration: 1
     }, 1)
     tl.to('.accordion-content', {
       height: 0,
       stagger: 1,
+      duration: 1
 
     }, 1)
 
 
   }, []);
   const toggleAccordion = (index: number) => {
-    // const accordionTexts = document.querySelectorAll(".accordion__text");
 
-    // if (openAccordion === index && index !== 0) {
-    //   setOpenAccordion(null);
-    //   accordionTexts[index].classList.remove("open")
-
-    // } else {
-    //   setOpenAccordion(index);
-    //   accordionTexts[index].classList.add("open")
-    // }
   };
 
 
@@ -87,7 +80,7 @@ const Accordion = () => {
         <div className="accordions">
           {extractedData.data.accordionCollection.items.map((item, index) => (
             <div ref={accordionRef}
-              className={`accordion-item ${index == 0 ? "open-x" : "close-x"}`}
+              className={`accordion-item ${index == 0 ? "open" : ""}`}
               key={index}
               onClick={() => toggleAccordion(index)}>
 

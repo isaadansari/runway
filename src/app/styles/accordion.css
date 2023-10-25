@@ -4,6 +4,7 @@ body {
   font-family: sans-serif;
   scroll-behavior: none;
   background: rgb(2, 2, 2);
+
 }
 
 
@@ -14,6 +15,7 @@ body {
   align-items: flex-start;
   height: 100%;
   width: 50vw;
+  min-height: 3000px;
   /* background: linear-gradient(120deg, #5c2fa6 13.57%, #5a36c0 98.38%); */
   background: rgb(25, 34, 39);
   overflow: visible;
