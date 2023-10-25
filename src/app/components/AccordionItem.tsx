@@ -12,7 +12,7 @@ interface AccordionItemProps {
 
 const AccordionItem: React.FC<AccordionItemProps> = ({ item, isOpen, onClick }) => {
   return (
-    <div className={`accordion-item ${isOpen ? "open" : ""}`} onClick={onClick}>
+    <div className={`accordion-item`} onClick={onClick}>
       <div className="accordion-title">{item.title}</div>
       <div className="accordion-content">
         <div className="accordion-text">

@@ -1,0 +1,53 @@
+"use client";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useLayoutEffect, useRef, useState } from "react";
+import AccordionItem from "./AccordionItem";
+import extractedData from "./data.json";
+
+const Accordion = () => {
+  const accordionRef = useRef<HTMLDivElement>(null);
+  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray<HTMLElement>('.accordion-item').forEach(accordionItem => {
+      ScrollTrigger.create({
+        trigger: accordionItem,  // this will use the first box as the trigger
+        start: "top top",
+        pin: true,
+        markers: true,
+        pinSpacing: false,
+      }
+      )
+    });
+  }, []);
+
+
+  const toggleAccordion = (index: number) => {
+    setOpenAccordion(index === openAccordion ? null : index);
+  };
+
+  return (
+    <div id="wrapper">
+      <div id="content">
+        <div className="spacer"></div>
+
+        <div className="accordions">
+          {extractedData.data.accordionCollection.items.map((item, index) => (
+            <AccordionItem
+              key={index}
+              item={item}
+              isOpen={index === openAccordion}
+              onClick={() => toggleAccordion(index)}
+            />
+          ))}
+        </div>
+        <div className="spacer"></div>
+        <div className="spacer"></div>
+      </div>
+    </div>
+  );
+};
+
+export default Accordion;
